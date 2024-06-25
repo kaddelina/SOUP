@@ -1,0 +1,52 @@
+*{ box-sizing: border-box;}
+html, body{ height: 100%;
+background:white;}
+
+
+@font-face {
+    font-family: "Arial Narrow";
+    src: url("../fonts/arialnarrow.ttf") format("truetype");
+    font-style: Light;
+    font-weight: Light;
+}
+
+p{ font-family: 'Arial Narrow'; }
+
+.space {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: block;
+}
+
+.about {
+    font-family: 'Arial Narrow';
+    position: fixed;
+    text-decoration: none;
+    color: black;
+    top: 0.5vw;
+    left: 0.5vw;
+    font-size: 2vw;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.about_us {
+    position: relative;
+    top: 6vw;
+    left: 7vw;
+    font-size: 1.5vw;
+    font-family: 'Arial Narrow';
+    width: 60vw;
+}
+
+.photo {
+    position: relative;
+    width: 30vw;
+    top: 15vw;
+    left: 55vw;
+}
+
+.photo img{
+    width: 100%;
+}
