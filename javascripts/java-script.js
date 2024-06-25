@@ -46,35 +46,26 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function createTextBlock(x, y, text) {
-        // Загрузка шрифта Arial Narrow
         let fontFace = new FontFace('Arial Narrow', 'url(./fonts/arialnarrow.ttf)');
-    
-        // Добавление шрифта в документ
-        fontFace.load().then(function(loadedFace) {
+            fontFace.load().then(function(loadedFace) {
             document.fonts.add(loadedFace);
             
-            // Создание холста для текстуры
+
             let canvas = document.createElement('canvas');
             let context = canvas.getContext('2d');
             
-            // Установка шрифта после его загрузки
-            context.font = '60px Arial Narrow'; // удвоенный размер шрифта
+            context.font = '60px Arial Narrow'; 
             let textWidth = context.measureText(text).width;
-            canvas.width = textWidth * 2; // удвоенная ширина
-            canvas.height = 80; // удвоенная высота текста
-            
-            // Рисование белого фона
-            context.fillStyle = 'white';
-            context.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // Рисование черного текста
-            context.font = '60px Arial Narrow'; // удвоенный размер шрифта
+            canvas.width = textWidth * 2; 
+            canvas.height = 80; 
+
+        
+            context.font = '60px Arial Narrow'; 
             context.fillStyle = 'black';
-            context.fillText(text, 0, 60); // удвоенное положение текста
+            context.fillText(text, 0, 60); 
     
             let texture = canvas.toDataURL('image/png');
             
-            // Создание физического тела с текстурой
             let textBlock = Bodies.rectangle(x, y, textWidth, 40, {
                 isStatic: false,
                 friction: 0.9,
@@ -83,13 +74,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 render: {
                     sprite: {
                         texture: texture,
-                        xScale: 0.5, // уменьшение масштаба до нормального размера
+                        xScale: 0.5, 
                         yScale: 0.5
                     }
                 }
             });
     
-            // Добавление блока в мир Matter.js
+
             World.add(engine.world, textBlock);
         }).catch(function(error) {
             console.error('Ошибка загрузки шрифта:', error);
@@ -139,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
         createletter("./img/p.png", 0.25),
     ];
 
-    // Создание текстовых блоков
+
     createTextBlock(300, -100, ' секонд-хенд SOUP');
     createTextBlock(600, -150, 'шабловка,26');
     createTextBlock(1000, -200, 'sekond@soup.ru');

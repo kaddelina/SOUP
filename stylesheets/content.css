@@ -13,8 +13,8 @@ background:white;}
 p{ font-family: 'Arial Narrow'; }
 
 .space {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    
     position: fixed;
     display: block;
 }
