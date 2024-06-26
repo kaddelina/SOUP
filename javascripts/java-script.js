@@ -129,8 +129,8 @@ document.addEventListener("DOMContentLoaded", function() {
         createletter("./img/p.png", scale),
     ];
 
-    createTextBlock(600, -100, 'секонд-хенд SOUP');
-    createTextBlock(800, 0, 'шабловка,26');
+    createTextBlock(700, -100, 'секонд-хенд SOUP');
+    createTextBlock(900, 0, 'шабловка,26');
     createTextBlock(1100, -150, 'sekond@soup.ru');
 
     let ground = Bodies.rectangle(width / 2, height, width, 60, { 
