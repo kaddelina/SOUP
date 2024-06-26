@@ -11,10 +11,24 @@
 }
 
 
-@media screen and (min-width: 415px) and (max-width: 768px) {
-   
-}
-
-@media screen and (max-width: 414px) {
-
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    .about {
+        top: 0.5vw;
+        left: 0.5vw;
+        font-size: 5vw;
+    }
+    
+    .about_us {
+        top: 12vw;
+        left: 7vw;
+        font-size: 4vw;
+    }
+    
+    .photo {
+        position: relative;
+        width: 60vw;
+        top: 25vw;
+        left: 35vw;
+    }
+    
 }

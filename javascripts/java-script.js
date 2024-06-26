@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let width = window.innerWidth;
     let height = window.innerHeight;
+
+    let scale = width < 1000 ? 0.125 : 0.25; 
     
     let render = Render.create({
         element: document.querySelector(".space"), 
@@ -29,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function createletter(texture, scale) {
         let x = getRandomInt(0, width);
         let y = getRandomInt(-300, -100);
-        let radius = 90;
+        let radius = 90 * (scale / 0.25); 
         return Bodies.circle(x, y, radius, {
             isStatic: false,
             friction: 0.9,
@@ -47,9 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function createTextBlock(x, y, text) {
         let fontFace = new FontFace('Arial Narrow', 'url(./fonts/arialnarrow.ttf)');
-            fontFace.load().then(function(loadedFace) {
+        fontFace.load().then(function(loadedFace) {
             document.fonts.add(loadedFace);
-            
 
             let canvas = document.createElement('canvas');
             let context = canvas.getContext('2d');
@@ -59,11 +60,10 @@ document.addEventListener("DOMContentLoaded", function() {
             canvas.width = textWidth * 2; 
             canvas.height = 80; 
 
-        
             context.font = '60px Arial Narrow'; 
-            context.fillStyle = 'black';
+            context.fillStyle = 'black'; 
             context.fillText(text, 0, 60); 
-    
+
             let texture = canvas.toDataURL('image/png');
             
             let textBlock = Bodies.rectangle(x, y, textWidth, 40, {
@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
             });
-    
 
             World.add(engine.world, textBlock);
         }).catch(function(error) {
@@ -88,52 +87,51 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     let letters = [
-        createletter("./img/s.png", 0.25), 
-        createletter("./img/o.png", 0.25),
-        createletter("./img/u.png", 0.25),
-        createletter("./img/p.png", 0.25),
-        createletter("./img/s.png", 0.25), 
-        createletter("./img/o.png", 0.25),
-        createletter("./img/u.png", 0.25),
-        createletter("./img/p.png", 0.25),
-        createletter("./img/s.png", 0.25), 
-        createletter("./img/o.png", 0.25),
-        createletter("./img/u.png", 0.25),
-        createletter("./img/p.png", 0.25),
-        createletter("./img/s.png", 0.25), 
-        createletter("./img/o.png", 0.25),
-        createletter("./img/u.png", 0.25),
-        createletter("./img/p.png", 0.25),
-        createletter("./img/s.png", 0.25), 
-        createletter("./img/o.png", 0.25),
-        createletter("./img/u.png", 0.25),
-        createletter("./img/p.png", 0.25),
-        createletter("./img/s.png", 0.25), 
-        createletter("./img/o.png", 0.25),
-        createletter("./img/u.png", 0.25),
-        createletter("./img/p.png", 0.25),
-        createletter("./img/s.png", 0.25), 
-        createletter("./img/o.png", 0.25),
-        createletter("./img/u.png", 0.25),
-        createletter("./img/p.png", 0.25),
-        createletter("./img/s.png", 0.25), 
-        createletter("./img/o.png", 0.25),
-        createletter("./img/u.png", 0.25),
-        createletter("./img/p.png", 0.25),
-        createletter("./img/s.png", 0.25), 
-        createletter("./img/o.png", 0.25),
-        createletter("./img/u.png", 0.25),
-        createletter("./img/p.png", 0.25),
-        createletter("./img/s.png", 0.25), 
-        createletter("./img/o.png", 0.25),
-        createletter("./img/u.png", 0.25),
-        createletter("./img/p.png", 0.25),
+        createletter("./img/s.png", scale), 
+        createletter("./img/o.png", scale),
+        createletter("./img/u.png", scale),
+        createletter("./img/p.png", scale),
+        createletter("./img/s.png", scale), 
+        createletter("./img/o.png", scale),
+        createletter("./img/u.png", scale),
+        createletter("./img/p.png", scale),
+        createletter("./img/s.png", scale), 
+        createletter("./img/o.png", scale),
+        createletter("./img/u.png", scale),
+        createletter("./img/p.png", scale),
+        createletter("./img/s.png", scale), 
+        createletter("./img/o.png", scale),
+        createletter("./img/u.png", scale),
+        createletter("./img/p.png", scale),
+        createletter("./img/s.png", scale), 
+        createletter("./img/o.png", scale),
+        createletter("./img/u.png", scale),
+        createletter("./img/p.png", scale),
+        createletter("./img/s.png", scale), 
+        createletter("./img/o.png", scale),
+        createletter("./img/u.png", scale),
+        createletter("./img/p.png", scale),
+        createletter("./img/s.png", scale), 
+        createletter("./img/o.png", scale),
+        createletter("./img/u.png", scale),
+        createletter("./img/p.png", scale),
+        createletter("./img/s.png", scale), 
+        createletter("./img/o.png", scale),
+        createletter("./img/u.png", scale),
+        createletter("./img/p.png", scale),
+        createletter("./img/s.png", scale), 
+        createletter("./img/o.png", scale),
+        createletter("./img/u.png", scale),
+        createletter("./img/p.png", scale),
+        createletter("./img/s.png", scale), 
+        createletter("./img/o.png", scale),
+        createletter("./img/u.png", scale),
+        createletter("./img/p.png", scale),
     ];
 
-
     createTextBlock(300, -100, ' секонд-хенд SOUP');
-    createTextBlock(600, -150, 'шабловка,26');
-    createTextBlock(1000, -200, 'sekond@soup.ru');
+    createTextBlock(500, -130, 'шабловка,26');
+    createTextBlock(1000, -100, 'sekond@soup.ru');
 
     let ground = Bodies.rectangle(width / 2, height, width, 60, { 
         isStatic: true,
