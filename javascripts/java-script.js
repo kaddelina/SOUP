@@ -130,8 +130,8 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     createTextBlock(300, -100, ' секонд-хенд SOUP');
-    createTextBlock(500, -130, 'шабловка,26');
-    createTextBlock(1000, -100, 'sekond@soup.ru');
+    createTextBlock(500, -180, 'шабловка,26');
+    createTextBlock(1000, -200, 'sekond@soup.ru');
 
     let ground = Bodies.rectangle(width / 2, height, width, 60, { 
         isStatic: true,
